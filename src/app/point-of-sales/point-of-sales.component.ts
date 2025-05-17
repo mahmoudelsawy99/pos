@@ -12,17 +12,17 @@ import {CartItem, ConfigJson, Promotion} from './models/ConfigModel';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PointOfSalesComponent implements OnInit, OnDestroy {
-  private unsubscribe: Subject<any> = new Subject<any>();
+  public unsubscribe: Subject<any> = new Subject<any>();
 
-  private configJson: ConfigJson;
+  public configJson: ConfigJson;
 
   public cartItems$: BehaviorSubject<CartItem[]>;
 
 
-  constructor(@Inject(LOCALE_ID) private locale: string,
-              private zone: NgZone,
-              private timeService: TimeService,
-              private posService: PosService) {
+  constructor(@Inject(LOCALE_ID) public locale: string,
+              public zone: NgZone,
+              public timeService: TimeService,
+              public posService: PosService) {
   }
 
   ngOnInit() {

@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
 
   public displayedColumns = ['delete', 'product', 'quantity', 'price'];
 
-  private tableData = [];
+  public tableData = [];
   @Input() set dataSource(src) {
     this.tableData = [...src];
     if (this.items) {
@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
     }
   }
 
-  constructor(private posService: PosService) { }
+  constructor(public posService: PosService) { }
 
   ngOnInit() {
   }
