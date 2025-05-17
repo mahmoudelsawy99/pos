@@ -1,0 +1,4 @@
+<div class="container bg-dark p-3" *ngIf="timeService.appTime$ | async as time">
+  <h2><strong><img class="img-fluid" src="https://brandlogos.net/wp-content/uploads/2022/08/vodafone-logo_brandlogos.net_yvaun.png" width="60"/><span >vodafone POS</span></strong></h2>
+  <span>{{ time | date:'medium'}}</span>
+</div>
